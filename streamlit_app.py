@@ -147,28 +147,3 @@ if audio_bytes:
     with open(audio_path, "wb") as f:
         f.write(audio_bytes)
     start_processing(audio_path)
-
-
-
-# if prompt := st.chat_input("What is up?"):
-#         st.session_state.messages.append({"role": "user", "content": prompt})
-#         with st.chat_message("user"):
-#             st.markdown(prompt)
-
-#         contentHistory = [
-#             Content(role=(m['role'] if m['role'] != 'assistant' else 'model'), parts=[Part.from_text(m['content'])])
-#             for m in st.session_state.messages[:-1]
-#         ]
-
-#         with st.chat_message("assistant"):
-#             chat = model.start_chat(
-#                 history=contentHistory
-#             )
-#             last_message = st.session_state.messages[-1]
-#             responses = chat.send_message(last_message["content"],stream=True)
-#             text_response = []
-#             for chunk in responses:
-#                 text_response.append(chunk.text if hasattr(chunk, "text") and chunk.text else "")
-#             response = st.write_stream(text_response)
-#             print(response)
-#         st.session_state.messages.append({"role": "assistant", "content": response})
